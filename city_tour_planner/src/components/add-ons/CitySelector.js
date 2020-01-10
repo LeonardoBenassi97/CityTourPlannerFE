@@ -1,21 +1,21 @@
 import React, { Component } from "react";
 
-class MeteForm extends Component
+
+class CitySelector extends Component
 {
+
     constructor(props)
     {
-        super(props);
+        super(props)
         this.state = {
-            r:{
-                ordinationType: 0,
-                ids: []
-            }
-        }
+            cities: [],
+            selected: 0
+        };
     }
 
     componentWillMount()
     {
-        fetch('http://localhost:8080/findAll')
+        fetch('http://localhost:8080/getCities')
         .then(
             function(response) 
             {
@@ -44,10 +44,10 @@ class MeteForm extends Component
     {
         return(
             <>
-                
+            
             </>
         );
     }
 }
 
-export default MeteForm;
+export default CitySelector;
